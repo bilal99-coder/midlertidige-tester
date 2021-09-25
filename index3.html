@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Reise bestilling</title>
+</head>
+<body>
+    <section class="bg"></section>
+    <div class="container">
+       <div class="form-container" >
+            <form class="form" id="regform" action="">
+           
+                <div class="form_tittel">
+                    <h1>Reiseinformasjon</h1>
+                </div>
+                <div class="form-group">
+                    <label for="Reise Type">Reisetype</label>
+                    <select class="form-control" id="reisetype" required>
+                        <option>En vei</option>
+                        <option>Tur/Retur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="avgang">Fra</label>
+                        <select class="form-control" id="fra" required>
+                            <option "" disabled="true" selected="true"></option>
+                            <option value="Bergen">Bergen</option>
+                            <option value="Oslo">Oslo</option>
+                            <option value="Kristiansand">Kristiansand</option>
+                        </select>
+                    <div id="fraFeil"></div>
+                </div>
+                <div class="form-group">
+                        <label for ="destinasjon">Til</label>
+                        <select class="form-control" id="til" required>
+                            <option "" disabled="true" selected="true"></option>
+                            <option value="Bergen">Bergen</option>
+                            <option value="Oslo">Oslo</option>
+                            <option value="Kristiansand">Kristiansand</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Utreise</label>
+                    <input type="date" class="datepicker" data-date-format="mm/dd/yyyy" id="utreise" required>
+                </div>
+                <div class="form-group">
+                        <label for="numberOfAdults">Antall Voksne</label>
+                        <input type="number" class="form-control" id="antallVoksne" min="1" max="10" required/>
+                </div>
+                <div class="form-group">
+                    <label for="numberOfChildren">Antall Barn</label>
+                    <input type="number" class="form-control" id="antallBarn" min="1" max="10" required/>
+                </div>
+                <div class="btn-box">
+                    <button type="button" id="btnNeste">Neste</button>
+                </div>
+            </form>
+        </div> 
+        <div class="form-container" >
+            <form class="form" id="regform2" action="">
+                <h1 class="overskrift">Lugar</h1>
+                <div class="form-group">
+                    <label>Lugar 1</label>
+                    <input type="checkbox" />    
+                </div>
+                <div class="form-group">
+                    <label>Lugar 2</label>
+                    <input type="checkbox" />
+                </div>
+                <div class="form-group">
+                    <label>Lugar 3</label>
+                    <input type="checkbox" />
+                </div>
+                <div class="form-group">
+                    <label>Lugar 4</label>
+                    <input type="checkbox" />
+                </div>
+                <div class="form-group">
+                    <label>Lugar 5</label>
+                    <input type="checkbox" />
+                </div>
+                <div class="btn-box" id="btnBox">
+                    <button type="button" id="btnTilbake1">Tilbake</button>
+                    <button type="button" id="btnNeste2">Neste</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-container" >
+            <form class="form" id="regform33" action="">
+                <h1 class="overskrift">Personinfo</h1>
+                <div class="form-group">
+                    <label>Person 1</label>
+                    <input type="text" />
+                </div>
+                <div class="form-group">
+                    <label>Person 2</label>
+                    <input type="text" />
+                </div>
+                <div class="form-group">
+                    <label>Person 3</label>
+                    <input type="text" />
+                </div>
+                <button type="button" class="btn btn-primary" id="suksess3"> Suksess </button>
+                <button type="button" class="btn btn-primary" id="war3">Warning </button>
+                <div class="btn-box" id="btnBox">
+                    <!-- <button type="button" id="btnTilbake2">Tilbake</button> -->
+                    <button type="button" id="btnFerdig">Ferdig</button>
+                </div>
+            </form>
+            </div>
+    <div class="form-container" >
+        <form class="personForm" id="regform3">
+            <legend>Fyll kontakt informasjon</legend>
+            <div class="form-group">
+                <label>Fornavn</label>
+                <input type="text" class="fornavn">
+            </div>
+            <div class="form-group">
+                <label>Etternavn</label>
+                <input type="text" class="etternavn">
+            </div>
+            <div class="form-group">
+                <label>Adresse</label>
+                <input type="text" class="adresse">
+            </div>
+            <button type="button" id="btnTilbake2">Tilbake</button>
+            <button  id="submitBtn">Submit</button>
+            
+            <div id="console"> </div>
+
+        </form>
+    </div>
+
+ </div>
+</div> 
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
